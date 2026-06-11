@@ -311,7 +311,7 @@ transition:.3s;
 .projectImg{
   width: 100%;
   max-width: 600px;
-  height: 300px 
+  height: 300px;
  object-fit: cover;
   border-radius: 15px;
   display: block;
@@ -502,12 +502,14 @@ display:none;
 /* Footer */
 
 footer{
-padding:50px 20px;
-background:black;
-color:white;
-text-align:center;
-margin-top:40px;
-line-height:1.8;
+  width:100%;
+  padding:60px 20px;
+  background:#000;
+  color:white;
+  text-align:center;
+  line-height:1.8;
+  margin-top:0;
+  border-top:3px solid #2563EB;
 }
 
 footer h2{
@@ -556,17 +558,13 @@ opacity:.92;
 }
 
 #clock{
-
-text-align:center;
-
-padding:20px;
-
-font-size:22px;
-
-font-weight:bold;
-
-background:#eee;
-
+  width:100%;
+  text-align:center;
+  padding:15px;
+  font-size:22px;
+  font-weight:bold;
+  background:#eee;
+  letter-spacing:1px;
 }
 
 .dark #clock{
@@ -686,17 +684,10 @@ font-size:36px;
 }
 
 .statsContainer{
-
-display:grid;
-
-grid-template-columns:
-
-repeat(auto-fit,
-
-minmax(220px,1fr));
-
-gap:25px;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  place-items: center;
 }
 
 .statCard{
@@ -1023,6 +1014,24 @@ grid-template-columns:1fr;
   width: 100%;
 }
 
+@media(max-width:768px){
+  .statsContainer{
+    grid-template-columns: 1fr;
+  }
+}
+
+body{
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+}
+
+#clock{
+  font-family:arial;
+  background:#f3f4f6;
+  border-top:1px solid #ddd;
+}
+
 </style>
 
 </head>
@@ -1345,111 +1354,42 @@ HTML
 
 </div>
 
-<!-- PROJECT SECTION ENDS -->
-
-<section id="social" class="reveal">
-
-<h1 style="text-align:center;">
-Connect With Me
-</h1>
-
-
-<div class="socials">
-
-<a href="https://www.instagram.com/krushnamalivlogs?igsh=YXBjN2hxMHJhaHMy"
-
-target="_blank">
-
-Instagram
-
-</a>
-
-<a href="https://www.linkedin.com/in/krushna-mali-b8012a413?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-
-target="_blank">
-
-LinkedIn
-
-</a>
-
-<a href="https://github.com/krushnamali-codes"
-
-target="_blank">
-
-GitHub
-
-</a>
-
 </div>
-
 </section>
 
+<!-- PROJECT SECTION ENDS -->
+<section id="social" class="reveal">
+  <h1 style="text-align:center;">Connect With Me</h1>
+
+  <div class="socials">
+    <a href="https://www.instagram.com/krushnamalivlogs" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/in/krushna-mali-b8012a413" target="_blank">LinkedIn</a>
+    <a href="https://github.com/krushnamali-codes" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<!-- ✅ THIS MUST BE OUTSIDE SOCIAL -->
 <section id="stats" class="reveal">
+  <h1 class="sectionTitle">My Statistics</h1>
 
-<h1 class="sectionTitle">
+  <div class="statsContainer">
 
-My Statistics
+    <div class="statCard">
+      <h2 class="counter" data-target="3">0</h2>
+      <p>Projects Completed</p>
+    </div>
 
-</h1>
+    <div class="statCard">
+      <h2 class="counter" data-target="100">0</h2>
+      <p>Hours Learning</p>
+    </div>
 
-<div class="statsContainer">
+    <div class="statCard">
+      <h2 class="counter" data-target="10">0</h2>
+      <p>Technologies</p>
+    </div>
 
-<div class="statCard">
-
-<h2 class="counter"
-
-data-target="3">
-
-0
-
-</h2>
-
-<p>
-
-Projects Completed
-
-</p>
-
-</div>
-
-<div class="statCard">
-
-<h2 class="counter"
-
-data-target="100">
-
-0
-
-</h2>
-
-<p>
-+
-Hours Learning
-
-</p>
-
-</div>
-
-<div class="statCard">
-
-<h2 class="counter"
-
-data-target="10">
-
-0
-
-</h2>
-
-<p>
-
-Technologies
-
-</p>
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
 <section
@@ -2041,7 +1981,7 @@ let count=0
 
 let speed=
 
-target/100
+target/80
 
 function update(){
 
